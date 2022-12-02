@@ -1,6 +1,6 @@
 const DisplayEntries = (props) => {
     return (  
-        <table>
+        <table className="table table-striped">
         <thead>
           <tr>
             <th>Entry Number</th>
@@ -8,10 +8,10 @@ const DisplayEntries = (props) => {
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {props.parentEntries.map((entry, index) => {
             return(
-              <tr>
+              <tr key = {index}>
                 <td>{index+1}</td>
                 <td>{entry.weight}</td>
                 <td>{entry.date}</td>
@@ -19,11 +19,6 @@ const DisplayEntries = (props) => {
               )
             })
           }
-          <tr>
-            <td>1</td>
-            <td>175</td>
-            <td>11-25-2021</td>
-        </tr>
         </tbody>
       </table>
     );
